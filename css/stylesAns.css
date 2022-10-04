@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Poppins:wght@300;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #2E3D62;
+    --secondary: #e8e8e8;
+    --primary-sky: #5DD8D3;
+    --secondary-sky: #F2FCFC;
+    --primary-pink: #EE539B;
+    --secondary-pink: #FFF3F9;
+    --primary-violet: #9364D4;
+    --secondary-violet: #F1E6FF;
+    --poppins: 'Poppins', sans-serif;
+    --hind: 'Hind Siliguri', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--primary);
+    font-family: var(--poppins);
+}
+
+body {
+    background: url(../assets/bg.png);
+    background-size: cover;
+    min-height: 300vh;
+    background-position-x: center;
+    padding-top: 300px;
+}
+.stroke_btn {
+    display: inline-block;
+    border: 1.5px solid var(--primary);
+    place-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.017em;
+    line-height: 26px;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+.icon {
+    padding: 0 5px;
+}
+
+.stroke_btn:hover {
+    color: white;
+    background: var(--primary);
+}
+.stroke_btn .icon svg path { transition: 0.3s; }
+.stroke_btn:hover .icon svg path {
+    fill: white;
+}
+
+
+.navigation_bar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 200px;
+    background: transparent;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.0);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 120px;
+    transition: 0.3s;
+}
+.navigation_bar .brand {
+    font-size: 30px;
+}
+.navigation_bar .links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.links a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.017em;
+    position: relative;
+    transition: 0.3s;
+}
+.links a::before {
+    content: '';
+    height: 2px;
+    width: 0px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    background: var(--primary);
+    translate: -50% 0;
+    transition: 0.3s;
+}
+.links a.active::before,  .links a:hover::before {
+    width: calc(100% + 10px);
+}
+
+
+
+
+
+
+
+/* COURSES CARD ********** BEGINNING */
+
+.course-card {
+    width: 354px;
+    height: 400px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 12px;
+
+    background: var(--secondary-violet);
+    border-color: var(--primary-violet);
+
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+}
+.course-card .card-body {
+    height: calc(100% - 210px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body .course-name {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px;
+
+    color: var(--primary-violet);
+}
+.card-body .min-card {
+    height: 30px;
+    background: white;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.min-card .rating {
+    width: 70px;
+}
+.min-card .rating img {
+    height: 30px;
+}
+.card-body .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-footer .price {
+    font-weight: 500;
+    font-size: 20px;
+}
+.btn {
+    background: var(--primary-violet);
+    color: white;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+}
+.btn span.icon{
+    position: relative;
+    height: 15px;
+    padding: 10px 0;
+}
+.btn .icon img {
+    width: 15px;
+    height: 15px;
+    translate: 0px 2px;
+}
+
+
+/* COURSES CARD ********** END */
