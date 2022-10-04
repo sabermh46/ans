@@ -3,6 +3,67 @@ console.log(
 )
 var nav_bar = document.querySelector('.navigation_bar');
 
+/* Fade ANIMATIONS start */
+
+/* Fade ANIMATIONS end */
+
+/* SHORT CARD CONTAINER START */
+
+var short_card_slider = document.querySelector('.frame .slider');
+var short_card_slider_left_btn = document.querySelector('.short_card_container .left_btn');
+var short_card_slider_right_btn = document.querySelector('.short_card_container .right_btn');
+
+
+var short_frame_width = document.querySelector('.short_card_container .frame').getBoundingClientRect().width;
+
+var slider_info = short_card_slider.getBoundingClientRect();
+var slider_width = slider_info.width;
+var slider_content_count = short_card_slider.querySelectorAll('.short_card').length;
+
+var sliderUnitMove = slider_width / slider_content_count;
+var slider_current_pos = 0;
+var slider_rem_pos;
+
+
+short_card_slider_right_btn.addEventListener('click', ()=>{
+    
+    if(slider_current_pos + short_frame_width + sliderUnitMove < slider_width) {
+        slider_current_pos += sliderUnitMove;
+    }
+    else {
+        slider_rem_pos = (slider_width - (slider_current_pos + short_frame_width))
+        slider_current_pos += slider_rem_pos
+    }
+
+    short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+
+})
+
+short_card_slider_left_btn.addEventListener('click', ()=>{
+    
+    if(slider_current_pos >= sliderUnitMove) {
+        slider_current_pos -= sliderUnitMove;
+    } else {
+        slider_current_pos = 0
+    }
+
+    short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+
+})
+
+
+
+console.log(
+    slider_width,
+    short_card_slider,
+    short_card_slider_left_btn,
+    short_card_slider_right_btn,
+    slider_content_count
+)
+
+/* SHORT CARD CONTAINER END */
+
+
 
 
 window.onscroll = (e)=> {

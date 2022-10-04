@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Poppins:wght@300;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@300;500;600;700;800;900&display=swap');
 :root {
     --primary: #2E3D62;
     --secondary: #e8e8e8;
@@ -11,6 +10,7 @@
     --secondary-violet: #F1E6FF;
     --poppins: 'Poppins', sans-serif;
     --hind: 'Hind Siliguri', sans-serif;
+    --nunito: 'Nunito', sans-serif;
 }
 * {
     margin: 0;
@@ -105,7 +105,133 @@ body {
 
 /* Short Card ************ start */
 
+.short_card_container {
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    position: relative;
+}
 
+.short_card_container .left_btn {
+    left: 0px;
+}
+.short_card_container .right_btn {
+    right: 0px;
+}
+.short_card_container .left_btn, .short_card_container .right_btn {
+    position: absolute;
+    top: 50%;
+    translate: 0px -50%;
+    cursor: pointer;
+}
+.short_card_container .frame {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: max-content;
+    gap: 23px;
+    transition: 0.5s;
+}
+
+
+
+
+.short_card {
+    display: inline-block;
+    width: 180px;
+    height: 200px;
+    padding-top: 40px;
+    position: relative;
+}
+.short_card .head {
+    width: 100px;
+    height: 80px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    top: 0;
+}
+.short_card .head img {
+    height: 50px;
+    width: 80px;
+}
+.short_card .body {
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.short_card .body .course_name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.short_card .body .btn {
+    font-family: var(--nunito);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* Violets */
+.short_card.violet .head {
+    background: var(--primary-violet);
+}
+.short_card.violet .body {
+    border: 2px solid var(--primary-violet);
+    background: var(--secondary-violet);
+}
+
+.short_card.violet .body .btn {
+    background: var(--primary-violet);
+}
+
+/* Pink */
+
+.short_card.pink .head {
+    background: var(--primary-pink);
+}
+.short_card.pink .body {
+    border: 2px solid var(--primary-pink);
+    background: var(--secondary-pink);
+}
+
+.short_card.pink .body .btn {
+    background: var(--primary-pink);
+}
+
+/* sky */
+
+.short_card.sky .head {
+    background: var(--primary-sky);
+}
+.short_card.sky .body {
+    border: 2px solid var(--primary-sky);
+    background: var(--secondary-sky);
+}
+
+.short_card.sky .body .btn {
+    background: var(--primary-sky);
+}
 
 /* Short Card ************ End */
 
@@ -172,7 +298,7 @@ body {
     font-weight: 500;
     font-size: 20px;
 }
-.btn {
+.btn.cc {
     background: var(--primary-violet);
     color: white;
     display: inline-block;
@@ -183,12 +309,12 @@ body {
     cursor: pointer;
     align-items: center;
 }
-.btn span.icon{
+.btn.cc span.icon{
     position: relative;
     height: 15px;
     padding: 10px 0;
 }
-.btn .icon img {
+.btn.cc .icon img {
     width: 15px;
     height: 15px;
     translate: 0px 2px;
@@ -196,3 +322,53 @@ body {
 
 
 /* COURSES CARD ********** END */
+
+
+
+.fade_in {
+    animation: fade_in 1s cubic-bezier(.73,.03,.44,1.02) 0s 1;
+}
+@keyframes fade_in {
+    from {
+        translate: 0px 100px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        translate: 0px 0px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.fade_in_right {
+    animation: fade_in_right 1s cubic-bezier(.73,.03,.44,1.02) 0s 1;
+}
+@keyframes fade_in_right {
+    from {
+        translate: 100px 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        translate: 0px 0px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.fade_in_left {
+    animation: fade_in_left 1s cubic-bezier(.73,.03,.44,1.02) 0s 1;
+}
+@keyframes fade_in_left {
+    from {
+        translate: -100px 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        translate: 0px 0px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
