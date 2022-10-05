@@ -88,10 +88,6 @@ function short_card_slide(){
     })
 
 
-
-    console.log(
-        'slider_width: '+slider_width,
-    )
 }
 
 
