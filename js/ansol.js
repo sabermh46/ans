@@ -9,61 +9,128 @@ var nav_bar = document.querySelector('.navigation_bar');
 
 /* SHORT CARD CONTAINER START */
 
-var short_card_slider = document.querySelector('.frame .slider');
-var short_card_slider_left_btn = document.querySelector('.short_card_container .left_btn');
-var short_card_slider_right_btn = document.querySelector('.short_card_container .right_btn');
-
-
-var short_frame_width = document.querySelector('.short_card_container .frame').getBoundingClientRect().width;
-
-var slider_info = short_card_slider.getBoundingClientRect();
-var slider_width = slider_info.width;
-var slider_content_count = short_card_slider.querySelectorAll('.short_card').length;
-
-var sliderUnitMove = slider_width / slider_content_count;
-var slider_current_pos = 0;
-var slider_rem_pos;
-
-
-short_card_slider_right_btn.addEventListener('click', ()=>{
+function short_card_slide(){
     
-    if(slider_current_pos + short_frame_width + sliderUnitMove < slider_width) {
-        slider_current_pos += sliderUnitMove;
-    }
-    else {
-        slider_rem_pos = (slider_width - (slider_current_pos + short_frame_width))
-        slider_current_pos += slider_rem_pos
-    }
-
-    short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
-
-})
-
-short_card_slider_left_btn.addEventListener('click', ()=>{
-    
-    if(slider_current_pos >= sliderUnitMove) {
-        slider_current_pos -= sliderUnitMove;
-    } else {
-        slider_current_pos = 0
-    }
-
-    short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
-
-})
+    var short_card_slider = document.querySelector('.short_card_container .frame .slider');
+    var short_card_slider_left_btn = document.querySelector('.short_card_container .left_btn');
+    var short_card_slider_right_btn = document.querySelector('.short_card_container .right_btn');
 
 
+    var short_frame_width = document.querySelector('.short_card_container .frame').getBoundingClientRect().width;
 
-console.log(
-    slider_width,
-    short_card_slider,
-    short_card_slider_left_btn,
-    short_card_slider_right_btn,
-    slider_content_count
-)
+    var slider_info = short_card_slider.getBoundingClientRect();
+    var slider_width = slider_info.width;
+    var slider_content_count = short_card_slider.querySelectorAll('.short_card').length;
+
+    var sliderUnitMove = (slider_width + slider_content_count) / slider_content_count;
+    var slider_current_pos = 0;
+    var slider_rem_pos;
+
+
+    short_card_slider_right_btn.addEventListener('click', ()=>{
+        
+        if(slider_current_pos + short_frame_width + sliderUnitMove < slider_width) {
+            slider_current_pos += sliderUnitMove;
+        }
+        else {
+            slider_rem_pos = (slider_width - (slider_current_pos + short_frame_width))
+            slider_current_pos += slider_rem_pos
+        }
+
+        short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+
+    })
+
+    short_card_slider_left_btn.addEventListener('click', ()=>{
+        
+        if(slider_current_pos >= sliderUnitMove) {
+            slider_current_pos -= sliderUnitMove;
+        } else {
+            slider_current_pos = 0
+        }
+
+        short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+
+    })
+
+
+
+    console.log(
+        slider_width,
+        short_card_slider,
+        short_card_slider_left_btn,
+        short_card_slider_right_btn,
+        slider_content_count
+    )
+}
+
+
+short_card_slide();
+
 
 /* SHORT CARD CONTAINER END */
 
 
+/* COURSE CARD CONTAINER START */
+
+function course_card_slide(){
+    
+    var course_card_slider = document.querySelector('.course_card_container .frame .slider');
+    var course_card_slider_left_btn = document.querySelector('.course_card_container .left_btn');
+    var course_card_slider_right_btn = document.querySelector('.course_card_container .right_btn');
+
+
+    var course_frame_width = document.querySelector('.course_card_container .frame').getBoundingClientRect().width;
+
+    var slider_info = course_card_slider.getBoundingClientRect();
+    var slider_width = slider_info.width;
+    var slider_content_count = course_card_slider.querySelectorAll('.course-card').length;
+
+    var sliderUnitMove = (slider_width + slider_content_count) / slider_content_count;
+    var slider_current_pos = 0;
+    var slider_rem_pos;
+
+
+    course_card_slider_right_btn.addEventListener('click', ()=>{
+        
+        if(slider_current_pos + course_frame_width + sliderUnitMove < slider_width) {
+            slider_current_pos += sliderUnitMove;
+        }
+        else {
+            slider_rem_pos = (slider_width - (slider_current_pos + course_frame_width))
+            slider_current_pos += slider_rem_pos
+        }
+
+        course_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+
+    })
+
+    course_card_slider_left_btn.addEventListener('click', ()=>{
+        
+        if(slider_current_pos >= sliderUnitMove) {
+            slider_current_pos -= sliderUnitMove;
+        } else {
+            slider_current_pos = 0
+        }
+
+        course_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+
+    })
+
+
+
+    console.log(
+        slider_width,
+        course_card_slider,
+        course_card_slider_left_btn,
+        course_card_slider_right_btn,
+        slider_content_count
+    )
+}
+
+course_card_slide();
+
+/* COURSE CARD CONTAINER END */
 
 
 window.onscroll = (e)=> {

@@ -63,6 +63,7 @@ body {
     height: 200px;
     background: transparent;
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.0);
+    z-index: 999;
 
     display: flex;
     justify-content: space-between;
@@ -240,6 +241,39 @@ body {
 
 /* COURSES CARD ********** BEGINNING */
 
+.course_card_container {
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    position: relative;
+}
+
+.course_card_container .left_btn {
+    left: 0px;
+}
+.course_card_container .right_btn {
+    right: 0px;
+}
+.course_card_container .left_btn, .course_card_container .right_btn {
+    position: absolute;
+    top: 50%;
+    translate: 0px -50%;
+    cursor: pointer;
+}
+
+.course_card_container .frame {
+    width: 100%;
+    overflow: hidden;
+}
+.course_card_container .frame .slider {
+    display: flex;
+    width: max-content;
+    gap: 69px;
+    transition: 0.5s;
+}
+
+
 .course-card {
     width: 354px;
     height: 400px;
@@ -264,7 +298,7 @@ body {
     justify-content: space-between;
 }
 
-.card-body .course-name {
+.course-card .card-body .course-name {
     text-align: center;
     font-weight: 500;
     font-size: 20px;
@@ -279,6 +313,7 @@ body {
     padding: 0 10px;
     font-size: 14px;
     line-height: 30px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.159);
 
     display: flex;
     justify-content: space-between;
@@ -298,7 +333,7 @@ body {
     font-weight: 500;
     font-size: 20px;
 }
-.btn.cc {
+.course-card .card-body .card-footer .btn.cc {
     background: var(--primary-violet);
     color: white;
     display: inline-block;
@@ -318,6 +353,45 @@ body {
     width: 15px;
     height: 15px;
     translate: 0px 2px;
+}
+
+/* VIOLET */
+
+.course-card.violet {
+    background: var(--secondary-violet);
+    border-color: var(--primary-violet);
+}
+.course-card.violet .card-body .course-name {
+    color: var(--primary-violet);
+}
+.course-card.violet .card-body .card-footer .btn.cc {
+    background: var(--primary-violet);
+}
+
+/* PINK */
+
+.course-card.sky {
+    background: var(--secondary-sky);
+    border-color: var(--primary-sky);
+}
+.course-card.sky .card-body .course-name {
+    color: var(--primary-sky);
+}
+.course-card.sky .card-body .card-footer .btn.cc {
+    background: var(--primary-sky);
+}
+
+/* SKY */
+
+.course-card.pink {
+    background: var(--secondary-pink);
+    border-color: var(--primary-pink);
+}
+.course-card.pink .card-body .course-name {
+    color: var(--primary-pink);
+}
+.course-card.pink .card-body .card-footer .btn.cc {
+    background: var(--primary-pink);
 }
 
 
