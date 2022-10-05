@@ -33,8 +33,7 @@ function short_card_slide(){
     var slider_current_pos = 0;
 
 
-    var screen_width = window.screen.width;
-    console.log('screen_width: ' + window.screen.width)
+    var screen_width = window.innerWidth;
 
     var effective_width, gap;
     if(screen_width > 1200){
@@ -128,8 +127,7 @@ function course_card_slide(){
     var slider_current_pos = 0;
 
 
-    var screen_width = window.screen.width;
-    console.log('screen_width: ' + window.screen.width)
+    var screen_width = window.innerWidth;
 
     var effective_width, gap;
     if(screen_width > 1200){
