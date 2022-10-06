@@ -104,29 +104,34 @@ body {
     width: calc(100% + 10px);
 }
 
-/* Short Card ************ start */
 
-.short_card_container {
-    width: 80%;
-    max-width: 1300px;
+
+/* SLIDER Start */
+.slider_container {
+    max-width: 95%;
     margin: 0 auto;
-    padding: 10px 50px;
+    padding: 10px 30px;
     position: relative;
 }
 
-.short_card_container .left_btn {
+.slider_container .left_btn {
     left: 0px;
 }
-.short_card_container .right_btn {
+.slider_container .right_btn {
     right: 0px;
 }
-.short_card_container .left_btn, .short_card_container .right_btn {
+.slider_container .left_btn, .slider_container .right_btn {
     position: absolute;
+    width: 25px;
     top: 50%;
     translate: 0px -50%;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
-.short_card_container .frame {
+.left_btn img, .right_btn img {
+    width: 25px;
+}
+.slider_container .frame {
     width: 100%;
     overflow: hidden;
 }
@@ -134,12 +139,15 @@ body {
 .slider {
     display: flex;
     width: max-content;
-    gap: 23px;
     transition: 0.5s;
 }
 
 
+/* SLIDER END */
 
+
+
+/* Short Card ************ start */
 
 .short_card {
     display: inline-block;
@@ -241,55 +249,24 @@ body {
 
 /* COURSES CARD ********** BEGINNING */
 
-.course_card_container {
-    width: 80%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 10px 50px;
-    position: relative;
-}
-
-.course_card_container .left_btn {
-    left: 0px;
-}
-.course_card_container .right_btn {
-    right: 0px;
-}
-.course_card_container .left_btn, .course_card_container .right_btn {
-    position: absolute;
-    top: 50%;
-    translate: 0px -50%;
-    cursor: pointer;
-}
-
-.course_card_container .frame {
-    width: 100%;
-    overflow: hidden;
-}
-.course_card_container .frame .slider {
-    display: flex;
-    width: max-content;
-    gap: 69px;
-    transition: 0.5s;
-}
 
 
 .course-card {
-    width: 354px;
+    width: 310px;
     height: 400px;
     border-width: 2px;
     border-style: solid;
     padding: 10px;
     border-radius: 12px;
 
-    background: var(--secondary-violet);
-    border-color: var(--primary-violet);
-
 }
 
 .course-card img {
     width: 100%;
     height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .course-card .card-body {
     height: calc(100% - 210px);
@@ -311,7 +288,7 @@ body {
     background: white;
     border-radius: 4px;
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 30px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.159);
 
@@ -323,6 +300,7 @@ body {
 }
 .min-card .rating img {
     height: 30px;
+    object-fit: none;
 }
 .card-body .card-footer {
     display: flex;

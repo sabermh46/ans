@@ -3,187 +3,98 @@ console.log(
 )
 var nav_bar = document.querySelector('.navigation_bar');
 
-/* Fade ANIMATIONS start */
-
-/* Fade ANIMATIONS end */
-
-/* SHORT CARD CONTAINER START */
-
-function short_card_slide(){
-
-    var short_card_container = document.querySelector('.short_card_container');
-    var short_card_frame = document.querySelector('.short_card_container .frame');
-
-    var short_card_slider = document.querySelector('.short_card_container .frame .slider');
-    var short_card_slider_left_btn = document.querySelector('.short_card_container .left_btn');
-    var short_card_slider_right_btn = document.querySelector('.short_card_container .right_btn');
 
 
-    
-    var slider_width = short_card_slider.getBoundingClientRect().width;
+/* CARD SLIDER START */
 
-    var slider_content = short_card_slider.querySelectorAll('.short_card');
-    var content_width;
-    slider_content.forEach(cont =>{
-        content_width = cont.getBoundingClientRect().width;
-    })
-    
-
-    
-    var slider_current_pos = 0;
+function card_slider(){
 
 
-    var screen_width = window.innerWidth;
+    // #slider_container
+    var slider_container = document.querySelectorAll('.slider_container');
 
-    var effective_width, gap;
-    if(screen_width > 1200){
-        effective_width = 1200
-        gap = 20
-    } else if(screen_width < 1200 && screen_width > 760){
-        effective_width = screen_width - 200
-        gap = 20
-    } else if(screen_width < 760){
-        effective_width = 350
-        gap = 0
-    }
+    slider_container.forEach(sliderCon =>{
 
-    var sliderUnitMove = content_width+gap;
+        var padding = 30;
 
-    var showing_element = parseInt(effective_width / (content_width+gap))
-    console.log(showing_element)
+        // #BUTTON CONTROLLER
+        var left_btn = sliderCon.querySelector('.left_btn');
+        var right_btn = sliderCon.querySelector('.right_btn');
 
-    short_card_slider.style.gap = `${gap}px`
+        // # SLIDER FRAME & SLIDER
+        var slider_frame = sliderCon.querySelector('.frame');
+        var slider = slider_frame.querySelector('.slider');
 
-    short_card_frame.style.width = `${ showing_element*content_width + (showing_element-1)*gap }px`;
-    short_card_container.style.width = `${ showing_element*content_width + (showing_element-1)*gap + 100 }px`;
+        // # SLIDER ITEMS
+        var sliding_items = slider.querySelectorAll('.slider_item');
 
-    var short_frame_width = short_card_frame.getBoundingClientRect().width;
+        // #SLIDER WIDTH
+        var slider_width = slider.getBoundingClientRect().width;
 
-    short_card_slider_right_btn.addEventListener('click', ()=>{
+        // #EACH ITEMS WIDTH
+        var sliding_items_width = sliding_items[0].getBoundingClientRect().width;
 
-        console.log('Top of left working',
-            'left Cond: '+(slider_current_pos + short_frame_width + sliderUnitMove),
-            'right cond: '+ slider_width
-        );
-        
-        if(slider_current_pos + short_frame_width + sliderUnitMove < slider_width) {
-            slider_current_pos += sliderUnitMove;
-            console.log('Conditional working');
+        // #SLIDER INITIAL POSITION & SCREEN WIDTH
+        var slider_current_pos = 0;
+        var screen_width = window.innerWidth;
+
+        // #SCREEN RATIOS & MEDIA-QUERY
+        var effective_width, gap=20;
+
+        if(screen_width > 1200){
+            effective_width = 1200
+        } else if(screen_width < 1200 && screen_width > 550){
+            effective_width = screen_width - 100
+        } else if(screen_width < 550){
+            effective_width = 350
         }
 
-        short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
+        var sliderUnitMove = sliding_items_width + gap;
+
+        // #ELEMENT PREVIEWED IN FRAME
+        var in_frame_element_count = parseInt(effective_width / sliderUnitMove);
+
+        // #SETTING SLIDER ELEMENTS GAP
+        slider.style.gap = `${gap}px`;
+
+        // #SETTING FRAME WIDTH
+        var frame_current_width = in_frame_element_count * sliding_items_width + (in_frame_element_count - 1) * gap;
+        slider_frame.style.width = `${frame_current_width}px`;
+
+        // #SETTING CONTAINER WIDTH
+        sliderCon.style.width = `${frame_current_width + (padding*2)}px`;
+
+        // #FUNCTIONALITY OF RIGHT BUTTON
+        right_btn.addEventListener('click', ()=>{
+
+            if((slider_width - (slider_current_pos + frame_current_width)) > 0) {
+                slider_current_pos += sliderUnitMove;
+            }
+
+            slider.style.transform = `translateX(-${slider_current_pos}px)`;
+            console.log(slider_width - (slider_current_pos + frame_current_width));
+
+        })
+
+        // #FUNCTIONALITY OF LEFT BUTTON
+        left_btn.addEventListener('click', ()=>{
+            if(slider_current_pos != 0){
+                slider_current_pos -= sliderUnitMove;
+            }
+            slider.style.transform = `translateX(-${slider_current_pos}px)`;
+        })
+
+
 
     })
-
-    short_card_slider_left_btn.addEventListener('click', ()=>{
-        
-        if(slider_current_pos >= sliderUnitMove) {
-            slider_current_pos -= sliderUnitMove;
-        } else {
-            slider_current_pos = 0
-        }
-
-        short_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
-
-    })
-
 
 }
 
 
-short_card_slide();
+card_slider();
 
 
 /* SHORT CARD CONTAINER END */
-
-
-/* COURSE CARD CONTAINER START */
-
-function course_card_slide(){
-    
-    var course_card_container = document.querySelector('.course_card_container');
-    var course_card_frame = document.querySelector('.course_card_container .frame');
-
-    var course_card_slider = document.querySelector('.course_card_container .frame .slider');
-    var course_card_slider_left_btn = document.querySelector('.course_card_container .left_btn');
-    var course_card_slider_right_btn = document.querySelector('.course_card_container .right_btn');
-
-
-    
-    var slider_width = course_card_slider.getBoundingClientRect().width;
-
-    var slider_content = course_card_slider.querySelectorAll('.course-card');
-    var content_width;
-    slider_content.forEach(cont =>{
-        content_width = cont.getBoundingClientRect().width;
-    })
-    
-
-    
-    var slider_current_pos = 0;
-
-
-    var screen_width = window.innerWidth;
-
-    var effective_width, gap;
-    if(screen_width > 1200){
-        effective_width = 1200
-        gap = 40
-    } else if(screen_width < 1200 && screen_width > 760){
-        effective_width = screen_width - 200
-        gap = 30
-    } else if(screen_width < 760){
-        effective_width = 390
-        gap = 0
-    }
-
-    var sliderUnitMove = content_width+gap;
-
-    var showing_element = parseInt(effective_width / (content_width+gap))
-    console.log(showing_element)
-
-    course_card_slider.style.gap = `${gap}px`
-
-    course_card_frame.style.width = `${ showing_element*content_width + (showing_element-1)*gap }px`;
-    course_card_container.style.width = `${ showing_element*content_width + (showing_element-1)*gap + 100 }px`;
-
-    var course_frame_width = course_card_frame.getBoundingClientRect().width;
-
-    course_card_slider_right_btn.addEventListener('click', ()=>{
-
-        console.log('Top of left working',
-            'left Cond: '+(slider_current_pos + course_frame_width + sliderUnitMove),
-            'right cond: '+ slider_width
-        );
-        
-        if(slider_current_pos + course_frame_width + sliderUnitMove < slider_width) {
-            slider_current_pos += sliderUnitMove;
-            console.log('Conditional working');
-        }
-
-        course_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
-
-    })
-
-    course_card_slider_left_btn.addEventListener('click', ()=>{
-        
-        if(slider_current_pos >= sliderUnitMove) {
-            slider_current_pos -= sliderUnitMove;
-        } else {
-            slider_current_pos = 0
-        }
-
-        course_card_slider.style.transform = `translateX(-${slider_current_pos}px)`;
-
-    })
-
-
-
-}
-
-course_card_slide();
-
-/* COURSE CARD CONTAINER END */
 
 
 window.onscroll = (e)=> {
