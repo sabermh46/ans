@@ -18,6 +18,7 @@
     box-sizing: border-box;
     color: var(--primary);
     font-family: var(--poppins);
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -195,7 +196,7 @@ body {
 }
 
 
-@media (max-width: 900px){
+@media (max-width: 1138px){
     .toggle_button {
         display: block;
     }
@@ -248,6 +249,52 @@ body {
 
 
 /* NAVIGATION BAR END */
+
+
+
+/* LANDING SECTION START */
+
+.landing_container {
+    position: relative;
+    min-height: 350px;
+    margin-bottom: 50px;
+}
+.landing_container .img_laptop {
+    position: absolute;
+    top: 0px;
+    left: 25%;
+    transform: translateX(-50%);
+}
+.landing_container .landing_text {
+    position: absolute;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 150px;
+    color: var(--primary-violet);
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.34);
+    white-space: nowrap;
+
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 550px) {
+    .landing_container .img_laptop {
+        left: 50%;
+        width: 70%;
+    }
+    .landing_container .landing_text {
+        position: absolute;
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+    }
+}
+
+/* LANDING SECTION START */
 
 
 
@@ -394,10 +441,24 @@ body {
 
 /* COURSES CARD ********** BEGINNING */
 
-
+.course_slider_container {
+    background: var(--secondary);
+    margin: 0px auto;
+    padding: 30px 0;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2),
+                0px -1px 4px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    max-width: 1300px;
+    width: calc(100% - 20px);
+}
+@media (max-width:1200px) and (min-width:855px) {
+    .course_slider_container {
+        width: 95%;
+    }
+}
 
 .course-card {
-    width: 310px;
+    width: 350px;
     height: 400px;
     border-width: 2px;
     border-style: solid;
@@ -405,6 +466,7 @@ body {
     border-radius: 12px;
 
 }
+
 
 .course-card img {
     width: 100%;
@@ -425,7 +487,6 @@ body {
     font-weight: 500;
     font-size: 20px;
     padding: 5px;
-
     color: var(--primary-violet);
 }
 .card-body .min-card {
@@ -436,9 +497,16 @@ body {
     font-size: 12px;
     line-height: 30px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.159);
-
     display: flex;
     justify-content: space-between;
+}
+@media (max-width: 450px) {
+    .course-card {
+        width: 280px;
+    }
+    .card-body .min-card {
+        font-size: 10px;
+    }
 }
 .min-card .rating {
     width: 70px;
@@ -569,3 +637,6 @@ body {
         visibility: visible;
     }
 }
+
+
+

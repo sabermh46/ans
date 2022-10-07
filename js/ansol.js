@@ -129,6 +129,7 @@ console.log(
 )
 
 
+
 window.onscroll = (e)=> {
 
     var y = window.scrollY;
@@ -146,5 +147,20 @@ window.onscroll = (e)=> {
         nav_bar.style.background = '#E9F4FF';
         nav_bar.style.boxShadow = '0px 1px 8px rgba(0, 0, 0, 0.25)';
     }
+
+    var landing_container = document.querySelector('.landing_container');
+    var landing_image = landing_container.querySelector('.img_laptop');
+    var landing_text = landing_container.querySelector('.landing_text');
+
+    landing_container.style.translate = `0px ${y*0.4}px`;
+    landing_image.style.translate = `${-y * 0.5}px ${y * 0.3}px`;
+    landing_text.style.translate = `${y * 0.4}px 0px`;
+
+    console.log(
+        landing_container,
+        landing_image,
+        landing_text
+    )
+
 
 }
