@@ -90,26 +90,59 @@ function card_slider(){
 
 }
 
-
 card_slider();
 
-
 /* SHORT CARD CONTAINER END */
+
+
+
+
+
+
+
+
+
+var course_btn_container = document.getElementById("browse_course");
+var course_btn_button = course_btn_container.querySelector(".stroke_btn");
+
+course_btn_button.addEventListener('click', ()=>{
+    course_btn_container.classList.toggle('active');
+})
+
+var course_items = course_btn_container.querySelectorAll('.course_btn .course');
+course_items.forEach((item, i)=>{
+    item.textContent= `Course ${i+1}`;
+    item.addEventListener('click', ()=>{
+        course_btn_container.classList.remove('active');
+    })
+})
+
+var nav_toggle_button = document.querySelector('.toggle_button');
+var nav_links = document.querySelector('.navigation_bar .links');
+nav_toggle_button.addEventListener('click', ()=>{
+    nav_links.classList.toggle('active');
+})
+
+console.log(
+    course_btn_container,
+    course_btn_button
+)
 
 
 window.onscroll = (e)=> {
 
     var y = window.scrollY;
+    var sW = window.innerWidth;
 
     if (y < 250){
         nav_bar.style.height = `${ 200-y*0.5 }px`;
-        nav_bar.style.padding = `0px ${120-y*0.3 }px`;
+        nav_bar.style.padding = `0px ${ sW > 450 ? (120-y*0.3) : (20-y*0.04) }px`;
         nav_bar.style.background = 'transparent';
         nav_bar.style.boxShadow = '0px 1px 8px rgba(0, 0, 0, 0.0)';
     } 
     if (y > 250){
         nav_bar.style.height = '75px';
-        nav_bar.style.padding = `0px ${ 20 }px`;
+        nav_bar.style.padding = `0px ${ sW > 450 ? 20 : 3 }px`;
         nav_bar.style.background = '#E9F4FF';
         nav_bar.style.boxShadow = '0px 1px 8px rgba(0, 0, 0, 0.25)';
     }
