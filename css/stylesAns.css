@@ -258,6 +258,7 @@ body {
     position: relative;
     min-height: 350px;
     margin-bottom: 50px;
+    overflow: hidden;
 }
 .landing_container .img_laptop {
     position: absolute;
