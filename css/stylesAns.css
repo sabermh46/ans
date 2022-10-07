@@ -255,6 +255,7 @@ body {
 /* LANDING SECTION START */
 
 .landing_container {
+    max-width: 100vw;
     position: relative;
     min-height: 350px;
     margin-bottom: 50px;
