@@ -644,7 +644,7 @@ body {
 /* Story Card Start */
 .story_card {
     background: white;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25); */
     border-radius: 20px;
     padding: 15px;
     width: 350px;
@@ -660,10 +660,20 @@ body {
     font-family: var(--hind);
     font-size: 20px;
     padding:  10px 0;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.125);
 }
 .story_card .body {
     text-align: justify;
     padding-bottom: 10px;
+}
+.story_card.violet {
+    border: 1px solid var(--primary-violet);
+}
+.story_card.pink {
+    border: 1px solid var(--primary-pink);
+}
+.story_card.sky {
+    border: 1px solid var(--primary-sky);
 }
 .story_card.violet .title {
     color: var(--primary-violet);
