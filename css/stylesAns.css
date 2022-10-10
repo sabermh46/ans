@@ -688,8 +688,78 @@ body {
 /* Story Card End */
 
 
+/* SUCCESS STORY CARD START */
+
+.an_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+.an_container .center_sub_header {
+    max-width: 40%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.an_details {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px 0px 10px;
+}
+.an_details .success_card {
+    width: 48%;
+    height: 350px;
+    background: white;
+    border-radius: 20px;
+}
+.an_footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0 0;
+}
+@media (max-width: 450px) {
+    .an_container .center_sub_header {
+        max-width: 90%;
+    }
+    .an_details {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .an_details .success_card {
+        width: calc(100% - 10px);
+        height: 250px;
+    }
+}
+
+
+/* SUCCESS STORY CARD END */
+
+
 .center_header {
     text-align: center;
     font-size: 32px;
     font-family: var(--hind);
+    font-weight: 700;
+}
+.center_sub_header {
+    text-align: center;
+    font-size: 18px;
+    font-family: var(--hind);
+    font-weight: 700;
+}
+
+
+.btn {
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-family: var(--hind);
+    border-radius: 12px;
+}
+.btn.btn_primary {
+    background: var(--primary);
+    color: white;
 }
