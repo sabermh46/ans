@@ -94,8 +94,16 @@ card_slider();
 
 /* SHORT CARD CONTAINER END */
 
-
-
+var classes_min_card = [
+    'violet',
+    'pink',
+    'sky'
+]
+var min_cards = document.querySelectorAll('.min_card');
+var cml = classes_min_card.length
+min_cards.forEach((card, i) => {
+    card.classList.add(`${ classes_min_card[ i<cml ? i: i%cml] }`);
+})
 
 
 

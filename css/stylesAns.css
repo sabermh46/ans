@@ -29,6 +29,24 @@ body {
     padding-top: 300px;
 }
 
+.btn, .btn.btn_primary {
+    outline: none;
+    border: 2px solid var(--primary);
+    background: var(--primary);
+    color: white;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-family: var(--hind);
+    border-radius: 12px;
+    transition: 0.3s;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn:hover, .btn.btn_primary:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
 #browse_course {
     position: relative;
 }
@@ -749,17 +767,167 @@ body {
 }
 
 
-.btn {
-    outline: none;
-    border: none;
-    background: white;
-    color: black;
-    padding: 10px 30px;
-    font-size: 20px;
+
+/* SINGLE CARD START */
+
+.single_card {
+    background: url(../assets/single_card_bg.png);
+    background-repeat: no-repeat;
+    min-height: 400px;
+    width: 80%;
+    min-width: 900px;
+    background-size: cover;
+    border-radius: 40px;
+    margin: 50px auto;
+    border: 2px solid var(--primary);
+    padding: 50px;
+    display: flex;
+}
+.single_card .side {
+    width: 50%;
+}
+.single_card .side img {
+    width: 100%;
+}
+.single_card .right_side {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.single_card .right_side .heading {
     font-family: var(--hind);
+    font-weight: 800;
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+.single_card .right_side .details {
+    font-family: var(--hind);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: justify;
+}
+@media (max-width: 900px) {
+    .single_card {
+        background: url(../assets/single_card_image_pot.png);
+        width: calc(100% - 30px);
+        min-width: auto;
+        flex-direction: column;
+        padding: 30px;
+        border-radius: 30px;
+    }
+    .single_card .side {
+        width: 100%;
+    }
+    .single_card .side img {
+        width: 100%;
+    }
+    .single_card .right_side {
+        padding-top: 50px;
+        padding-left: 0px;
+    }
+}
+/* SINGLE CRAD END */
+
+/* FLAT CRAD START */
+
+.flat_card {
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto;
+    display: flex;
+}
+.flat_card .side {
+    width: 50%;
+    padding: 10px;
+}
+.flat_card .left_side {
+    padding-right: 50px;
+}
+.flat_card .side .heading {
+    font-family: var(--hind);
+    font-weight: 800;
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+.flat_card .side .details {
+    font-family: var(--hind);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: justify;
+}
+.flat_card .right_side img {
+    border-radius: 30px;
+    width: 100%;
+}
+
+.full_width {
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.min_card {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    padding: 5px 10px;
+    flex: 1;
+    min-width: 150px;
     border-radius: 12px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.125);
 }
-.btn.btn_primary {
-    background: var(--primary);
-    color: white;
+.min_card .heading {
+    font-family: var(--hind);
+    font-size: 24px;
+    font-weight: 600;
 }
+.min_card .details {
+    font-family: var(--hind);
+    font-size: 16px;
+    font-weight: 700;
+}
+.min_card.violet {
+    background: var(--secondary-violet);
+}
+.min_card.pink {
+    background: var(--secondary-pink);
+}
+.min_card.sky {
+    background: var(--secondary-sky);
+}
+.min_card.violet .heading {
+    color: var(--primary-violet);
+}
+.min_card.pink .heading {
+    color: var(--primary-pink);
+}
+.min_card.sky .heading {
+    color: var(--primary-sky);
+}
+@media (max-width: 900px) {
+    .flat_card {
+        width: calc(100% - 30px);
+        flex-direction: column-reverse;
+    }
+    .flat_card .side {
+        width: 100%;
+        padding: 10px;
+    }
+    .flat_card .left_side {
+        padding: 20px 30px;
+    }
+    
+    .full_width {
+        width: calc(100% - 30px);
+        margin: 20px auto;
+    }
+}
+
+/* FLAT CRAD END */
