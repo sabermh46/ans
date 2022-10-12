@@ -412,6 +412,7 @@ body {
     padding: 5px 15px;
     border-radius: 8px;
     cursor: pointer;
+    border: none;
 }
 /* Violets */
 .short_card.violet .head {
@@ -554,6 +555,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     align-items: center;
+    border: none;
 }
 .btn.cc span.icon{
     position: relative;
