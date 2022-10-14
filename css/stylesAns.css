@@ -189,6 +189,12 @@ body {
 }
 .navigation_bar .brand {
     font-size: 30px;
+    display: grid;
+    place-items: center;
+}
+.navigation_bar .brand img {
+    width: 180px;
+    transition: 0.1s;
 }
 .navigation_bar .links {
     display: flex;
@@ -259,6 +265,10 @@ body {
     .navigation_bar .brand {
         font-size: 20px;
     }
+    .navigation_bar .brand img {
+        width: 120px;
+        transition: 0.1s;
+    } 
     #browse_course .stroke_btn {
         border: 1.5px solid var(--primary);
         place-items: center;
@@ -283,7 +293,7 @@ body {
     position: relative;
     min-height: 350px;
     margin-bottom: 50px;
-    overflow: hidden;
+    overflow:hidden;
 }
 .landing_container .img_laptop {
     position: absolute;
@@ -301,6 +311,7 @@ body {
     color: var(--primary-violet);
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.34);
     white-space: nowrap;
+    font-family: var(--poppins);
 
     top: 100px;
     left: 50%;

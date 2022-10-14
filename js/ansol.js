@@ -4,6 +4,9 @@ console.log(
 var nav_bar = document.querySelector('.navigation_bar');
 
 
+var logo = document.querySelector('.navigation_bar .brand img');
+
+
 
 /* CARD SLIDER START */
 
@@ -148,21 +151,23 @@ window.onscroll = (e)=> {
         nav_bar.style.padding = `0px ${ sW > 450 ? (120-y*0.3) : (20-y*0.04) }px`;
         nav_bar.style.background = 'transparent';
         nav_bar.style.boxShadow = '0px 1px 8px rgba(0, 0, 0, 0.0)';
+        logo.style.width = sW > 450 ? `${ 200-y*0.5 }px` : `${ 120-y*0.1 }px`
     } 
     if (y > 250){
         nav_bar.style.height = '75px';
         nav_bar.style.padding = `0px ${ sW > 450 ? 20 : 3 }px`;
         nav_bar.style.background = '#E9F4FF';
         nav_bar.style.boxShadow = '0px 1px 8px rgba(0, 0, 0, 0.25)';
+        logo.style.width = `100px`
     }
 
     var landing_container = document.querySelector('.landing_container');
     var landing_image = landing_container.querySelector('.img_laptop');
     var landing_text = landing_container.querySelector('.landing_text');
 
-    landing_container.style.translate = `0px ${y*0.4}px`;
-    landing_image.style.translate = `${-y * 0.5}px ${y * 0.3}px`;
-    landing_text.style.translate = `${y * 0.4}px 0px`;
+
+    landing_image.style.translate = `${-y * 0.5}px ${y * 0.2}px`;
+    landing_text.style.translate = `${y * 0.4}px ${y*0.2}px`;
 
     console.log(
         landing_container,
