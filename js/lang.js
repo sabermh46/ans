@@ -25,6 +25,10 @@
             bn: 'যোগাযোগ',
         },
     ],
+    browse_courses: {
+        en: 'Browse Courses',
+        bn: 'ব্রাউজ কোর্স',
+    }
 
 }
 
@@ -45,7 +49,7 @@ lang_btn.addEventListener('click', ()=>{
 
 
 var n_bar = document.querySelectorAll('.links a.link');
-console.log(n_bar)
+var stroke_btn = document.querySelector('.bb_btn');
 
 
 
@@ -58,6 +62,8 @@ function toggleEnglish() {
     n_bar.forEach((nav, i)=>{
         nav.textContent = lang.navigations[i].en;
     })
+
+    stroke_btn.textContent = lang.browse_courses.en
     
 
 }
@@ -70,6 +76,8 @@ function toggleBangla() {
     n_bar.forEach((nav, i)=>{
         nav.textContent = lang.navigations[i].bn;
     })
+
+    stroke_btn.textContent = lang.browse_courses.bn
 
 }
 

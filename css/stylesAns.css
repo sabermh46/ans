@@ -51,7 +51,8 @@ body {
     position: relative;
 }
 #browse_course .stroke_btn {
-    display: inline-block;
+    display: flex;
+    gap: 5px;
     border: 1.5px solid var(--primary);
     place-items: center;
     padding: 10px 15px;
@@ -81,6 +82,11 @@ body {
 
 #browse_course .stroke_btn:hover, #browse_course.active .stroke_btn {
     background: var(--primary);
+}
+#browse_course .stroke_btn .bb_btn {
+    transition: 0.5s;
+}
+#browse_course .stroke_btn:hover .bb_btn, #browse_course.active .stroke_btn .bb_btn {
     color: white;
 }
 #browse_course .stroke_btn:hover .icon, #browse_course.active .stroke_btn .icon {
@@ -254,12 +260,12 @@ body {
         font-size: 20px;
     }
     #browse_course .stroke_btn {
-        display: inline-block;
         border: 1.5px solid var(--primary);
         place-items: center;
         padding: 5px 10px;
         font-size: 14px;
         line-height: 26px;
+        display: flex;
     }
 }
 
