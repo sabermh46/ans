@@ -17,7 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--primary);
-    font-family: var(--poppins);
+    font-family: var(--hind);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -311,6 +311,7 @@ body {
         font-style: normal;
         font-weight: 700;
         font-size: 50px;
+        font-family: var(--poppins);
     }
 }
 
@@ -933,3 +934,53 @@ body {
 }
 
 /* FLAT CRAD END */
+
+.lang_btn {
+    position: relative;
+    height: 35px;
+    width: 80px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.lang_btn .lang {
+    width: 34px;
+/*     border: 1px solid red; */
+    text-align: center;
+    line-height: 30px;
+    transition: 0.5s;
+}
+.lang_btn .english {
+    font-weight: 700;
+    color: white;
+}
+.lang_btn.active .english {
+    color: var(--primary);
+}
+.lang_btn .bangla {
+    font-family: var(--hind);
+    font-weight: 900;
+    color: var(--primary);
+}
+.lang_btn.active .bangla {
+    color: white;
+}
+.lang_btn::before {
+    content: '';
+    height: 28px;
+    width: 34px;
+    position: absolute;
+    border-radius: 5px;
+    background: var(--primary);
+    z-index: -1;
+    top: 1.5px;
+    left: 1px;
+    transition: 0.5s;
+    
+}
+.lang_btn.active::before {
+    left: 40.5px;
+}
