@@ -133,6 +133,12 @@ var nav_links = document.querySelector('.navigation_bar .links');
 nav_toggle_button.addEventListener('click', ()=>{
     nav_links.classList.toggle('active');
 })
+var n_bar = document.querySelectorAll('.links a.link');
+n_bar.forEach(link=>{
+    link.addEventListener('click', ()=> {
+        nav_links.classList.remove('active');
+    })
+})
 
 console.log(
     course_btn_container,
