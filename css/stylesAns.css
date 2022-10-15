@@ -544,7 +544,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-@media (max-width: 450px) {
+@media (max-width: 550px) {
     .course-card {
         width: 280px;
     }
@@ -693,7 +693,7 @@ body {
     width: 350px;
 
 }
-@media (max-width: 450px) {
+@media (max-width: 550px) {
     .story_card {
         width: 280px;
     }
