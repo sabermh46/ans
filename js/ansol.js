@@ -169,11 +169,7 @@ window.onscroll = (e)=> {
     landing_image.style.translate = `${-y * 0.5}px ${y * 0.2}px`;
     landing_text.style.translate = `${y * 0.4}px ${y*0.2}px`;
 
-    console.log(
-        landing_container,
-        landing_image,
-        landing_text
-    )
+
 
 
 }

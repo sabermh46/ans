@@ -12,6 +12,12 @@
     --hind: 'Hind Siliguri', sans-serif;
     --nunito: 'Nunito', sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
+object {
+    width: 100%;
+}
 * {
     margin: 0;
     padding: 0;
@@ -503,7 +509,6 @@ body {
     border-style: solid;
     padding: 10px;
     border-radius: 12px;
-
 }
 
 
