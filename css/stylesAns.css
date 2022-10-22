@@ -47,6 +47,7 @@ body {
     transition: 0.3s;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
 }
 .btn:hover, .btn.btn_primary:hover {
     background: var(--secondary);
@@ -992,14 +993,14 @@ body {
 }
 .lang_btn::before {
     content: '';
-    height: 28px;
+    height: 28.5px;
     width: 34px;
     position: absolute;
     border-radius: 5px;
     background: var(--primary);
     z-index: -1;
     top: 1.5px;
-    left: 1px;
+    left: 1.5px;
     transition: 0.5s;
     
 }

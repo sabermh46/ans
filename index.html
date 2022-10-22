@@ -78,6 +78,7 @@
         <img src="./assets/laptop.png" alt="" class="img_laptop fade_in_left">
         <div class="landing_text fade_in_right">
             an solution
+            <div style="font-size: 18px;" class="login_status"></div>
         </div>
     </div>
 
@@ -247,9 +248,9 @@
     
             <div class="frame">
     
-                <div class="slider">
+                <div class="slider show_all_courses">
     
-                    <div class="course-card violet fade_in slider_item">
+<!--                     <div class="course-card violet fade_in slider_item">
                         <img src="./assets/c1.png" alt="">
                         <div class="card-body">
                             <div class="course-name">
@@ -433,7 +434,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
     
                 </div>
     
@@ -658,99 +659,8 @@
 
     <!-- Backend Connection -->
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyB7gqNbP2uUBKSbB2CF6WMmBzLrMi3ZmFs",
-          authDomain: "saber-ans.firebaseapp.com",
-          projectId: "saber-ans",
-          storageBucket: "saber-ans.appspot.com",
-          messagingSenderId: "752507609008",
-          appId: "1:752507609008:web:cad1ffc64c5bb784ecc075"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-
-        import { getDatabase, ref, get, set, child, update, remove } 
-        from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
-
-        const db = getDatabase();
-
-
-        /* Reference */
-
-        var nameBox = document.getElementById("Namebox");
-        var rollBox = document.getElementById("Rollbox");
-        var secBox = document.getElementById("Secbox");
-        var genBox = document.getElementById("GenBox");
-
-
-        var insBtn = document.getElementById("insBtn");
-        var selBtn = document.getElementById("selBtn");
-        var upBtn = document.getElementById("upBtn");
-        var delBtn = document.getElementById("delBtn");
-
-
-        /* INSERT DATA FUNCTION */
-
-        function InsertData(){
-            set(
-                ref(db, "TheStudents/" + rollBox.value),
-                {
-                    StudentName: nameBox.value,
-                    RollNo: rollBox.value,
-                    Section: secBox.value,
-                    Gender: genBox.value
-                }
-            ).then(
-                ()=>{
-                    alert("Data Storeed Successfully");
-                }
-            ).catch(
-                (error)=>{
-                    alert("Unsuccessful, error: "+error);
-                }
-            );
-        }
-
-
-        insBtn.addEventListener('click', InsertData);
-
-
-        function selectData(){
-            const dbref = ref(db);
-
-            get(
-                child(dbref, "TheStudents/" + rollBox.value)
-            ).then(
-                (snapShot)=>{
-                    if(snapShot.exists()){
-                        nameBox.value = snapShot.val().StudentName
-                        secBox.value = snapShot.val().Section
-                        genBox.value = snapShot.val().Gender
-                    } else {
-                        alert("No data Found");
-                    }
-                }
-            ).catch(
-                (error)=>{
-                    alert("Unsuccessful, error: "+error);
-                }
-            )
-
-        }
-
-        selBtn.addEventListener('click', selectData);
-
-
-      </script>
-
+    <script type="module" src="./js/auth.js"></script>
+    <script src="./js/course_maker.js"></script>
     <script src="./js/ansol.js"></script>
     <script src="./js/content_loader.js"></script>
     <script src="./js/lang.js"></script>

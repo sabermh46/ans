@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN Solution | Login</title>
+    <link rel="stylesheet" href="./css/stylesAns.css">
+</head>
+<body>
+    <form action="POST">
+        <div class="inp">
+            <label for="name">
+                full name
+            </label>
+            <input type="text" placeholder="Full Name" id="name">
+        </div>
+        <div class="inp">
+            <label for="email">
+                email
+            </label>
+            <input type="email" placeholder="Your Email" id="email">
+        </div>
+        <div class="inp">
+            <label for="password">
+                password
+            </label>
+            <input type="password" placeholder="New Password" id="password">
+        </div>
+        <div class="loginBtn reg">
+            Sign Up
+        </div>
+    </form>
+
+    <style>
+        body {
+            min-height: 100vh !important;
+        }
+        form {
+            padding: 20px;
+            background: yellowgreen;
+            border-radius: 12px;
+            width: 400px;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .inp {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .inp label {
+            font-size: 20px;
+            text-transform: capitalize;
+            font-family: var(--poppins);
+        }
+        .inp input {
+            height: 30px;
+            border-radius: 8px;
+            border: none;
+            padding-left: 10px;
+            font-family: var(--poppins);
+            font-size: 16px;
+        }
+        .loginBtn {
+            outline: none;
+            border: 2px solid var(--primary);
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 16px;
+            font-family: var(--hind);
+            border-radius: 12px;
+            transition: 0.3s;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .loginBtn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+    </style>
+
+
+    <script type="module" src="./js/auth.js"></script>
+</body>
+</html>
