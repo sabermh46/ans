@@ -886,6 +886,12 @@ body {
     border-radius: 30px;
     width: 100%;
 }
+.flat_card .side.right_side {
+    padding: 0;
+    height: 400px;
+    border-radius: 30px;
+    overflow: hidden;
+}
 
 .full_width {
     width: 90%;
@@ -944,19 +950,31 @@ body {
     }
     .flat_card .side {
         width: 100%;
-        padding: 10px;
+        padding: 0px;
     }
     .flat_card .left_side {
-        padding: 20px 30px;
+        padding: 20px 0px;
     }
     
     .full_width {
         width: calc(100% - 30px);
         margin: 20px auto;
     }
+    .flat_card .side.right_side {
+        padding: 0;
+        height: 240px;
+        border-radius: 30px;
+        overflow: hidden;
+    }
 }
 
 /* FLAT CRAD END */
+
+.course_box.show_all_courses .course-card {
+    min-width: 320px;
+    flex: 1;
+    max-width: 450px;
+}
 
 .lang_btn {
     position: relative;

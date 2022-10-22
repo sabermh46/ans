@@ -6,7 +6,7 @@ const courses = [
         review: 1234,
         students: 120,
         price: 12000,
-        link: './courses/web_dev.html'
+        link: '/courses/web_dev.html'
     },
     {
         course_title: 'Web Designing',
@@ -15,7 +15,7 @@ const courses = [
         review: 1234,
         students: 120,
         price: 12000,
-        link: './courses/web_des.html'
+        link: '/courses/web_des.html'
     },
     {
         course_title: 'Basic Computer',
@@ -65,7 +65,7 @@ const courses = [
 ]
 
 
-var show_all_courses = document.querySelector('.show_all_courses');
+var show_all_courses = document.querySelectorAll('.show_all_courses');
 console.log(show_all_courses);
 
 var classes_min_card = [
@@ -77,38 +77,43 @@ var cml = classes_min_card.length
 
 var c_length = courses.length;
 
-for(var i=0; i<c_length; i++){
-    var content = `
-            <div class="course-card ${ classes_min_card[ i<cml ? i: i%cml] } fade_in slider_item">
-            <img src="${ courses[i].image }" alt="">
-            <div class="card-body">
-                <div class="course-name">
-                    ${ courses[i].course_title }
-                </div>
-                <div class="min-card">
-                    <div class="rating">
-                        <img src="./assets/stars.svg" alt="">
+
+show_all_courses.forEach(course =>{
+    for(var i=0; i<c_length; i++){
+        var content = `
+                <div class="course-card ${ classes_min_card[ i<cml ? i: i%cml] } fade_in slider_item">
+                <img src="${ courses[i].image }" alt="">
+                <div class="card-body">
+                    <div class="course-name">
+                        ${ courses[i].course_title }
                     </div>
-                    <div class="reviews">
-                        ${ courses[i].review } Reviews
+                    <div class="min-card">
+                        <div class="rating">
+                            <img src="./assets/stars.svg" alt="">
+                        </div>
+                        <div class="reviews">
+                            ${ courses[i].review } Reviews
+                        </div>
+                        <div class="students">
+                            ${ courses[i].students } Students
+                        </div>
                     </div>
-                    <div class="students">
-                        ${ courses[i].students } Students
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="price">
-                        ${ courses[i].price } Bdt
-                    </div>
-                    <div class="btn cc">
-                        View Details
-                        <span class="icon">
-                            <img src="./assets/arrow_right.svg" alt="">
-                        </span>
+                    <div class="card-footer">
+                        <div class="price">
+                            ${ courses[i].price } Bdt
+                        </div>
+                        <a class="btn cc" href='${ courses[i].link }'>
+                            View Details
+                            <span class="icon">
+                                <img src="./assets/arrow_right.svg" alt="">
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    `;
-    show_all_courses.innerHTML += content
-}
+        `;
+        course.innerHTML += content
+        
+    }
+    
+})
