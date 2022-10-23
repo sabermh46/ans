@@ -1,25 +1,18 @@
+var lang_ch = localStorage.getItem('lang') == 'en'
+console.log(lang_ch)
 const courses = [
     {
-        course_title: 'Web Development',
+        course_title: lang_ch ? 'Web Development' : 'ওয়েব ডেভেলপমেন্ট',
         image: 'https://i.ibb.co/0CW30Gw/course-we-dev.png/',
         rating: 5,
         review: 1234,
         students: 120,
         price: 12000,
-        link: '/courses/web_dev.html'
+        link: './courses/web_dev.html'
     },
     {
-        course_title: 'Web Designing',
+        course_title: lang_ch ? 'Web Designing' : 'ওয়েব ডিজাইনিং',
         image: 'https://i.ibb.co/tbZCtjG/course-we-de.png/',
-        rating: 5,
-        review: 1234,
-        students: 120,
-        price: 12000,
-        link: '/courses/web_des.html'
-    },
-    {
-        course_title: 'Basic Computer',
-        image: 'https://i.ibb.co/rdZX0wM/course-ba-co.png/',
         rating: 5,
         review: 1234,
         students: 120,
@@ -27,7 +20,16 @@ const courses = [
         link: './courses/web_des.html'
     },
     {
-        course_title: 'Professional Graphic Design',
+        course_title: lang_ch ? 'Basic Computer' : 'বেসিক কম্পিউটার',
+        image: 'https://i.ibb.co/rdZX0wM/course-ba-co.png/',
+        rating: 5,
+        review: 1234,
+        students: 120,
+        price: 12000,
+        link: './courses/basic_com.html'
+    },
+    {
+        course_title: lang_ch ? 'Professional Graphic Design' : 'প্রফেশনাল গ্রাফিক্স ডিজাইন',
         image: 'https://i.ibb.co/rsg8bH3/course-gr-de.png/',
         rating: 5,
         review: 1234,
@@ -36,7 +38,7 @@ const courses = [
         link: './courses/web_des.html'
     },
     {
-        course_title: 'Digital Marketing',
+        course_title: lang_ch ? 'Digital Marketing' : 'ডিজিটাল মার্কেটিং',
         image: 'https://i.ibb.co/LdrnbFq/course-di-ma.png/',
         rating: 5,
         review: 1234,
@@ -45,7 +47,7 @@ const courses = [
         link: './courses/web_des.html'
     },
     {
-        course_title: 'Interior/Exterior Design',
+        course_title: lang_ch ? 'Interior / Exterior Design' : 'ইন্টেরিওর / এক্সটেরিওর ডিজাইন',
         image: 'https://i.ibb.co/ssYMqDr/course-in-ex-de.png/',
         rating: 5,
         review: 1234,
@@ -54,7 +56,7 @@ const courses = [
         link: './courses/web_des.html'
     },
     {
-        course_title: 'UI / UX Design',
+        course_title: lang_ch ? 'UI / UX Design' : 'ইউআই / ইউএক্স ডিজাইন',
         image: 'https://i.ibb.co/4sM924M/course-ui-ux.png/',
         rating: 5,
         review: 1234,
@@ -117,3 +119,21 @@ show_all_courses.forEach(course =>{
     }
     
 })
+
+
+
+var menu_course_btn = document.querySelector('.course_btn.menu_course_btn');
+
+for(var i=0; i<c_length; i++){
+    var content = `
+    <a href="${ courses[i].link }" class="course" style="background:linear-gradient(45deg, rgba(255,255,255,0.8), rgba(255,255,255,0.9)), url('${ courses[i].image }');background-size: cover;background-position: 50% 50%;">
+        <div class="course_name">
+            ${ courses[i].course_title }
+        </div>
+        <div class="students">
+            ${ courses[i].students } Students
+        </div>
+    </a>
+    `
+    menu_course_btn.innerHTML += content
+}

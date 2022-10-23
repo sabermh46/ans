@@ -122,7 +122,6 @@ course_btn_button.addEventListener('click', ()=>{
 
 var course_items = course_btn_container.querySelectorAll('.course_btn .course');
 course_items.forEach((item, i)=>{
-    item.textContent= `Course ${i+1}`;
     item.addEventListener('click', ()=>{
         course_btn_container.classList.remove('active');
     })

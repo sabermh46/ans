@@ -9,16 +9,12 @@
             bn: 'হোম',
         },
         {
-            en: 'Gallery',
-            bn: 'গ্যালারী',
-        },
-        {
-            en: 'About',
+            en: 'About Us',
             bn: 'আমাদের সম্পর্কে',
         },
         {
-            en: 'Services',
-            bn: 'সেবা সমূহ',
+            en: 'Success Story',
+            bn: 'সফলতার গল্প',
         },
         {
             en: 'Contact Us',
@@ -36,6 +32,7 @@ var lang_btn = document.querySelector('.lang_btn');
 
 lang_btn.addEventListener('click', ()=>{
     checkLangMode();
+    location.reload();
 })
 
 

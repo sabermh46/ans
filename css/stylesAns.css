@@ -140,18 +140,24 @@ body {
     border-radius: 8px;
     width: calc(100%/3 - 2%);
     height: calc(100%/3 - 2%);
-    display: grid;
-    place-items: center;
-    font-size: 20px;
     text-decoration: none;
-    background: var(--secondary-sky);
     border: 1px solid rgba(46, 61, 98, 0.5);
     padding: 5px;
     text-align: center;
     transition: 0.3s;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
 }
-#browse_course .course_btn .course:hover {
-    background: var(--secondary-violet);
+.course_btn .course .course_name {
+    font-size: 16px;
+    white-space: wrap;
+    height: 70%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+.course_btn .students {
+    font-size: 14px;
+    height: 30%;
 }
 
 
@@ -1011,16 +1017,15 @@ body {
 }
 .lang_btn::before {
     content: '';
-    height: 28.5px;
+    height: 90%;
     width: 34px;
     position: absolute;
     border-radius: 5px;
     background: var(--primary);
     z-index: -1;
-    top: 1.5px;
-    left: 1.5px;
+    top: 5%;
+    left: 1px;
     transition: 0.5s;
-    
 }
 .lang_btn.active::before {
     left: 40.5px;
