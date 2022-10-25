@@ -60,7 +60,7 @@ function toggleEnglish() {
         nav.textContent = lang.navigations[i].en;
     })
 
-    stroke_btn.textContent = lang.browse_courses.en
+    stroke_btn ? stroke_btn.textContent = lang.browse_courses.en : ''
     
 
 }
@@ -74,7 +74,7 @@ function toggleBangla() {
         nav.textContent = lang.navigations[i].bn;
     })
 
-    stroke_btn.textContent = lang.browse_courses.bn
+    stroke_btn ? stroke_btn.textContent = lang.browse_courses.bn : ''
 
 }
 

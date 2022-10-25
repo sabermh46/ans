@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@300;500;600;700;800;900&display=swap');
 :root {
     --primary: #2E3D62;
+    --primary-low-op: #2e3d621f;
     --secondary: #e8e8e8;
     --primary-sky: #5DD8D3;
     --secondary-sky: #F2FCFC;
@@ -36,6 +37,7 @@ body {
 }
 
 .btn, .btn.btn_primary {
+    display: inline-block;
     outline: none;
     border: 2px solid var(--primary);
     background: var(--primary);
@@ -125,12 +127,7 @@ body {
     translate: 0px 100px;
     backdrop-filter: blur(3px);
 }
-@media (max-width: 550px){
-    #browse_course .course_btn{
-        width: 300px;
-        height: 300px;
-    }
-}
+
 #browse_course.active .course_btn {
     visibility: visible;
     opacity: 1;
@@ -158,6 +155,22 @@ body {
 .course_btn .students {
     font-size: 14px;
     height: 30%;
+}
+@media (max-width: 550px){
+    #browse_course .course_btn{
+        width: 300px;
+        height: 300px;
+    }
+    .course_btn .course .course_name {
+        font-size: 14px;
+        height: 80%;
+        line-height: 20px;
+        font-weight: bold;
+    }
+    .course_btn .students {
+        font-size: 12px;
+        height: 20%;
+    }
 }
 
 

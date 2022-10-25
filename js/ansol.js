@@ -114,18 +114,21 @@ min_cards.forEach((card, i) => {
 
 
 var course_btn_container = document.getElementById("browse_course");
-var course_btn_button = course_btn_container.querySelector(".stroke_btn");
 
-course_btn_button.addEventListener('click', ()=>{
-    course_btn_container.classList.toggle('active');
-})
 
-var course_items = course_btn_container.querySelectorAll('.course_btn .course');
-course_items.forEach((item, i)=>{
-    item.addEventListener('click', ()=>{
-        course_btn_container.classList.remove('active');
+if(course_btn_container) {
+    var course_btn_button = course_btn_container.querySelector(".stroke_btn");
+    course_btn_button.addEventListener('click', ()=>{
+        course_btn_container.classList.toggle('active');
     })
-})
+    
+    var course_items = course_btn_container.querySelectorAll('.course_btn .course');
+    course_items.forEach((item, i)=>{
+        item.addEventListener('click', ()=>{
+            course_btn_container.classList.remove('active');
+        })
+    })
+}
 
 var nav_toggle_button = document.querySelector('.toggle_button');
 var nav_links = document.querySelector('.navigation_bar .links');
@@ -139,10 +142,6 @@ n_bar.forEach(link=>{
     })
 })
 
-console.log(
-    course_btn_container,
-    course_btn_button
-)
 
 
 
