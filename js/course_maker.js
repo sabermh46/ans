@@ -1,4 +1,4 @@
-var lang_ch = localStorage.getItem('lang') == 'en'
+var lang_ch = localStorage.getItem('lang') == 'en' || null
 console.log(lang_ch)
 const courses = [
     {
@@ -147,6 +147,73 @@ show_all_courses.forEach(course =>{
     }
     
 })
+
+var l_text = document.querySelector('.landing_text');
+if(l_text){
+    var l_text_content = l_text.textContent;
+    var split_text = l_text_content.split("");
+    l_text.textContent = ''
+}
+var char = 0;
+var counter = 0
+var timer;
+function landing_animator(){
+    
+    
+    for (let i = 0; i < l_text_content.length; i++) {
+        const element = l_text_content[i];
+        var content = `<span class='span'>${element}</span>`;
+        if(element != ' '){
+            l_text.innerHTML += content;
+            counter++
+        }
+        
+    }
+    timer = setInterval(onTick, 50);
+    
+    
+}
+
+    
+function onTick() {
+
+    const span = document.querySelectorAll('span.span')[char];
+    span.classList.add('fa');
+    char++;
+    if(char === counter){
+        completed();
+        return
+    }
+    
+}
+function completed() {
+    clearInterval(timer);
+}
+
+console.log(split_text);
+
+
+
+var loader = document.querySelector('.loader');
+    
+var images = document.querySelectorAll('.course-card img')
+var imgLoaded = 0;
+images.forEach(img=>{
+    img.addEventListener('load', ()=>{
+        imgLoaded++;
+        removeLoader(imgLoaded);
+    })
+})
+
+function removeLoader(i){
+    if(i == images.length){
+        loader.style.display = 'none';
+        if(l_text){
+            landing_animator();
+        }
+        
+    }
+}
 
 
 

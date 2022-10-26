@@ -9,6 +9,37 @@
     <link rel="stylesheet" href="./css/all_courses.css">
 </head>
 <body>
+
+    <div class="loader">
+        <div class="lt">
+            Loading.....
+        </div>
+    </div>
+    <style>
+        .loader {
+            height: 100vh;
+            width: 100%;
+            z-index: 9999999;
+            background: linear-gradient(45deg, blue, cadetblue);
+            position: fixed;
+            top: 0;
+            display: grid;
+            place-items: center;
+        }
+        .loader .lt {
+            color: white;
+            font-size: 30px;
+            letter-spacing: 5px;
+            animation: loader 1s linear 0s infinite;
+        }
+        @keyframes loader {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+
     <div class="box">
 
     </div>
@@ -55,7 +86,7 @@
             </div>
     
             <div class="toggle_button">
-    
+                
             </div>
         </div>
     </div>
@@ -431,48 +462,14 @@
 
 
     <div style="height: 20px;"></div>
-    <!-- Checking BACKEND conection -->
-    <style>
-        label {
-            display: inline-block;
-            width: 80px;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 5px 10px;
-            border-radius: 4px;
-            border: 1px solid black;
-            outline: none;
-            margin: 10px;
-            cursor: pointer;
-        }
-    </style>
-
-    <label>Name</label> <input type="text" id="Namebox"><br>
-    <label>RollNo</label> <input type="text" id="Rollbox"><br>
-    <label>Section</label> <input type="text" id="Secbox"><br>
-    <label>Gender</label>
-    <select id="GenBox">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
-
-    <hr>
-
-    <button id="insBtn">INSERT</button>
-    <button id="selBtn">SELECT</button>
-    <button id="upBtn">UPDATE</button>
-    <button id="delBtn">DELETE</button>
 
 
 
-    <!-- Backend Connection -->
 
     <script type="module" src="./js/auth.js"></script>
-    <script src="./js/course_maker.js"></script>
+    
     <script src="./js/ansol.js"></script>
-    <script src="./js/content_loader.js"></script>
     <script src="./js/lang.js"></script>
+    <script src="./js/course_maker.js"></script>
 </body>
 </html>

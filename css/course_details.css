@@ -46,3 +46,36 @@
     background-size: cover !important;
     background-position: 50% 50% !important;
 }
+
+
+@media (max-width: 1250px) and (min-width: 1000px) {
+    .course_details {
+        width: calc( 100% - 100px);
+    }
+}
+@media (max-width: 999px) {
+    .course_details {
+        width: calc( 100% - 100px);
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .course_details .right_part {
+        width: 100%;
+    }
+    .course_details .left_part {
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .course_details {
+        width: calc( 100% - 40px);
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .course_details .right_part {
+        height: 270px;
+    }
+    .course_details .left_part {
+        width: 100%;
+    }
+}
