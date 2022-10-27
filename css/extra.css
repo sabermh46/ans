@@ -1,0 +1,94 @@
+.hContain {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+.head h1, .head2 h1 {
+    font-size: 50px;
+}
+.head p {
+    font-size: 20px;
+    max-width: 70%;
+    text-align: justify;
+}
+.head2 p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.big-image {
+    background: url(./../assets/it_park.jpg);
+    aspect-ratio: 2;
+    background-size: cover;
+    margin-bottom: 100px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--primary);
+}
+.big-image .texts {
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.254), rgba(255, 255, 255, 0.816));
+    width: 100%;
+}
+.section_card {
+    background: var(--secondary-violet);
+    max-width: 400px;
+    padding: 30px;
+    border: 2px solid var(--primary-violet);
+    border-radius: 12px;
+}
+.section_card h2 {
+    color: var(--primary-violet);
+}
+.section_card p {
+    font-family: var(--poppins);
+    line-height: 40px;
+    font-size: 20px;
+}
+span.popp {
+    font-family: var(--poppins);
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@media (max-width:1250px) and (min-width:855px) {
+    .hContain {
+        width: calc(100% - 100px);
+    }
+}
+@media (max-width:854px) and (min-width:550px) {
+    .hContain {
+        width: calc(100% - 100px);
+    }
+    .head p {
+        max-width: 90%;
+    }
+    .big-image .texts h1 {
+        font-size: 23px;
+    }
+}
+@media (max-width:550px) {
+    .hContain {
+        width: calc(100% - 40px);
+        padding-bottom: 50px;
+    }
+    .head h1, .head2 h1 {
+        text-align: center;
+    }
+    .head p {
+        max-width: 100%;
+        font-size: 18px;
+
+    }
+    .big-image .texts {
+        padding: 10px;
+        background: linear-gradient(rgba(255, 255, 255, 0.254), rgba(255, 255, 255, 0.816));
+    }
+    .big-image .texts h1 {
+        font-size: 20px;
+        
+    }
+}
