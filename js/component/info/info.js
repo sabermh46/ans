@@ -1,8 +1,19 @@
 
 const template = document.createElement('template');
+var path = window.location.pathname;
+var subPath = path.split('/')
+
+var hasCourses=false
+for (let i = 0; i < subPath.length; i++) {
+    if(subPath[i] == 'courses') {
+        hasCourses = true;
+        break;
+    }
+}
+var cssPath = hasCourses ? './../css/stylesAns.css' : './css/stylesAns.css';
 
 template.innerHTML = `
-    <link rel="stylesheet" href='../../../css/stylesAns.css'>
+    <link rel="stylesheet" href='${cssPath}'>
     <div class="contact_container">
         <div class="part violet">
             <div class="one">
