@@ -2,8 +2,7 @@
 const template = document.createElement('template');
 
 template.innerHTML = `
-    
-    <link rel="stylesheet" href='./../../../css/stylesAns.css'>
+    <link rel="stylesheet" href='../../../css/stylesAns.css'>
     <div class="contact_container">
         <div class="part violet">
             <div class="one">
