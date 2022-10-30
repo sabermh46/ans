@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@300;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 :root {
     --primary: #2E3D62;
     --primary-low-op: #2e3d621f;
@@ -1136,7 +1137,7 @@ span.span.fa {
     transition: 0.4s;
 }
 .icons .ic:hover {
-    background: var(--primary-sky);
+    background: white;
 }
 .icons .ic img {
     max-width: 80%;
@@ -1158,3 +1159,205 @@ span.span.fa {
     gap: 10px;
     flex-wrap: wrap;
 }
+
+
+
+
+
+
+.center-heading {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+
+.contact_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.part {
+    display: flex;
+    min-width: 40%;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 20px;
+    flex: 1;
+    gap: 10px;
+}
+.part .one {
+    min-width: 70px;
+    display: grid;
+    place-items: center;
+}
+.mat_icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.mat_icon .material-icons {
+    color: white;
+}
+.part .two {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--poppins);
+    text-transform: capitalize;
+    line-height: 40px;
+}
+.part .two a {
+    text-decoration: none;
+    text-transform: none;
+    font-family: var(--poppins);
+    line-height: 40px;
+}
+
+
+.part.violet {
+    border: 2px solid var(--primary-violet);
+    background: var(--secondary-violet);
+}
+.part.sky {
+    border: 2px solid var(--primary-sky);
+    background: var(--secondary-sky);
+}
+.part.pink {
+    border: 2px solid var(--primary-pink);
+    background: var(--secondary-pink);
+}
+.part.violet .one .mat_icon {
+    background: var(--primary-violet);
+}
+.part.sky .one .mat_icon {
+    background: var(--primary-sky);
+}
+.part.pink .one .mat_icon {
+    background: var(--primary-pink);
+}
+.part.violet .two a {
+    color: var(--primary-violet);
+}
+.part.sky .two a {
+    color: var(--primary-sky);
+}
+.part.pink .two {
+    color: var(--primary-pink);
+}
+
+
+.contact_container.iframe {
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.contact_container iframe {
+    width: 100%;
+    height: 400px;
+}
+
+
+
+form.form {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 800px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: var(--primary);
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+.input {
+    flex: 1;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 300px;
+}
+.input.full {
+    min-width: 100%;
+}
+.input label {
+    display: inline-block;
+    width: 150px;
+    font-family: var(--poppins);
+    padding-bottom: 10px;
+}
+.input input, .input textarea {
+    border: none;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: var(--poppins);
+    width: 100%;
+}
+.input textarea {
+    max-width: 100%;
+    min-width: 100%;
+}
+form.form button {
+    width: 100%;
+    font-size: 20px;
+    font-family: var(--poppins);
+    padding: 10px 0;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: white;
+    transition: 0.5s;
+}
+form.form button:hover {
+    background: var(--primary);
+    color: white;
+    border: 2px solid white;
+}
+
+
+@media (max-width:1250px) and (min-width:855px) {
+    .contact_container {
+        width: calc(100% - 100px);
+    }
+}
+@media (max-width:854px) and (min-width:550px) {
+    .contact_container {
+        width: calc(100% - 40px);
+    }
+    .part {
+        min-width: 60%;
+    }
+}
+@media (max-width:550px) {
+    .contact_container {
+        width: calc(100% - 40px);
+    }
+    .part {
+        min-width: 60%;
+    }
+    .contact_container iframe {
+        height: 300px;
+    }
+}
+
+
+
+
+
+
+
+/* 
+@media (max-width:1250px) and (min-width:855px) {
+
+}
+@media (max-width:854px) and (min-width:550px) {
+
+}
+@media (max-width:550px) {
+
+} */

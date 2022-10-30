@@ -1,3 +1,12 @@
+import FooTer from "./component/footer/footer.js";
+import InFoo from "./component/info/info.js";
+
+window.customElements.define('foo-ter', FooTer);
+
+window.customElements.define('in-fo', InFoo)
+
+
+
 document.addEventListener('DOMContentLoaded', ()=>{
     console.log(
         "Script Working!"
@@ -187,8 +196,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             landing_text.style.translate = `${y * 0.4}px ${y*0.2}px`;
         }
     
-    
-    
-    
     }
+
+
+    
+
 })
