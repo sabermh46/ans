@@ -22,8 +22,8 @@ template.innerHTML = `
                 </div>
             </div>
             <div class="two">
-                <a href="#" class="phone">+880 1880 098654</a>
-                <a href="#" class="phone">+880 1880 098653</a>
+                <a href="tel:+8801308028661" class="phone">+880 1308 028661</a>
+                <a href="tel:+8801926684901" class="phone">+880 1926 684901</a>
             </div>
         </div>
         <div class="part sky">
